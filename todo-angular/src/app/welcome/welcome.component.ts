@@ -26,12 +26,17 @@ export class WelcomeComponent implements OnInit {
   getWelcomeMessage(){
     console.log(this.service.executeHelloWorldBeanService())
     this.service.executeHelloWorldBeanService().subscribe(
-      response => this.handleSuccessfulResponse(response)
-    )
+      // for handling success message
+      response => this.handleSuccessfulResponse(response),
+      // for handling error message
+      error => this.handleErrorResponse(error));
+  }
+  handleErrorResponse(error: any): void {
+    this.welcomeMessageFromService = error.error.message
   }
 
   handleSuccessfulResponse(response:HelloWorldBean) {
-    this.welcomeMessageFromService =response.message
+    this.welcomeMessageFromService = response.message
   }
 
 }
