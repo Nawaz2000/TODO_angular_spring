@@ -1,4 +1,4 @@
-package com.nawaz2000.todorest.controller;
+package com.nawaz2000.todorest.helloworld;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.nawaz2000.todorest.controller;
+package com.nawaz2000.todorest.helloworld;
 
 public class HelloWorldBean {
     private String message;
