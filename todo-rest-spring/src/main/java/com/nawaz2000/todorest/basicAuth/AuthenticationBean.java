@@ -1,9 +1,9 @@
-package com.nawaz2000.todorest.helloworld;
+package com.nawaz2000.todorest.basicAuth;
 
-public class HelloWorldBean {
+public class AuthenticationBean {
     private String message;
 
-    public HelloWorldBean(String message) {
+    public AuthenticationBean(String message) {
         this.message = message;
     }
 
