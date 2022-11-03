@@ -1,4 +1,4 @@
-package com.nawaz2000.todorest.basicAuth;
+package com.basicAuth;
 
 public class AuthenticationBean {
     private String message;

@@ -1,4 +1,4 @@
-package com.nawaz2000.todorest.basicAuth;
+package com.basicAuth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

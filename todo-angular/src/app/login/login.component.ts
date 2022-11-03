@@ -10,7 +10,7 @@ import { HardcodedAuthenticationService } from '../service/hardcoded-authenticat
 })
 export class LoginComponent implements OnInit {
 
-  username = 'Nawaz2000'
+  username = 'in28minutes'
   password = ''
   errorMessage = 'Invalid credentials'
   invalidLogin = false;
@@ -36,6 +36,21 @@ export class LoginComponent implements OnInit {
   handleBasicAuthLogin() {
     //console.log(this.username)
     this.basicAuthenticationService.executeAuthenticationService(this.username, this.password)
+      .subscribe(
+        response => {
+          this.router.navigate(['welcome', this.username])
+          this.invalidLogin = false;
+        },
+        error => {
+          this.invalidLogin = true
+        }
+      )
+      
+  }
+
+  handleJwtAuthLogin() {
+    //console.log(this.username)
+    this.basicAuthenticationService.executeJwtAuthenticationService(this.username, this.password)
       .subscribe(
         response => {
           this.router.navigate(['welcome', this.username])

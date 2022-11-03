@@ -12,6 +12,18 @@ export class BasicAuthenticationService {
     private http: HttpClient
   ) { }
 
+  executeJwtAuthenticationService(username:string, password:string){
+    return this.http.post<any>(`http://localhost:8080/authenticate`,{username,password}).pipe(
+      map(
+        response => {
+          sessionStorage.setItem('authenticateUser', username)
+          sessionStorage.setItem('token', `Bearer ${response.token}`)
+          return response
+        }
+      )
+    );
+  }
+
   authenticate(username:string, password:string){
     //console.log('before' + this.isUserLoggedIn())
     if (username==='Nawaz2000' && password=='123'){
@@ -55,7 +67,7 @@ export class BasicAuthenticationService {
   getAuthenticatedToken(){
     if (this.getAuthenticatedUser())
       return sessionStorage.getItem('token');
-    return null;
+    return null
   }
 
   logout(){
