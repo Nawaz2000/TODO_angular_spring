@@ -24,22 +24,22 @@ export class TodoComponent implements OnInit {
 
     if (this.id != -1) {
       this.todoService
-        .retrieveTodo('Nawaz2000', this.id)
+        .retrieveTodo('in28minutes', this.id)
         .subscribe((response) => (this.todo = response));
     }
   }
 
   saveTodo() {
-    if (this.id != -1) {
+    if (this.id == -1) {
       this.todoService
-        .createTodo('Nawaz2000', this.todo)
+        .createTodo('in28minutes', this.todo)
         .subscribe((response) => {
           console.log(response);
           this.router.navigate(['/todos']);
         });
     } else {
       this.todoService
-        .updateTodo('Nawaz2000', this.id, this.todo)
+        .updateTodo('in28minutes', this.id, this.todo)
         .subscribe((response) => {
           console.log(response);
           this.router.navigate(['/todos']);
