@@ -1,14 +1,21 @@
 package com.nawaz2000.todorest.todo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Todo {
 
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String username;
     private String description;
     private Date targetDate;
-    private boolean isDone;
+    private Boolean isDone;
 
     public Todo() {
     }
